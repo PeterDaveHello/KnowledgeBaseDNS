@@ -3,17 +3,17 @@ title: DNS 过滤规则语法
 sidebar_position: 2
 ---
 
-## Introduction
+## 前言
 
-You can use AdGuard DNS filtering rules syntax to make the rules more flexible, so they can block content according to your preferences. AdGuard DNS filtering rules syntax can be used in different AdGuard products such as AdGuard Home, AdGuard DNS, AdGuard for Windows/Mac/Android.
+您可以使用 AdGuard DNS 过滤规则语法来使规则更加灵活，因此它们可以根据您的首选项来拦截内容。 AdGuard DNS 过滤规则语法可用于不同的 AdGuard 产品，如 AdGuard Home、 AdGuard DNS、 Windows/Mac/Android 的 AdGuard。
 
-There are three different approaches to writing hosts blocklists:
+有三种不同的方法来编写主机拦截列表：
 
-* [Adblock-style syntax](#adblock-style-syntax): the modern approach to writing filtering rules based on using a subset of the Adblock-style rule syntax. This way blocklists are compatible with browser ad blockers.
+* [Adblock 风格的语法](#adblock-style-syntax)： 基于使用 Adblock 风格的规则语法子集编写过滤规则的现代方法。 这样阻止拦截列表与浏览器广告拦截器兼容。
 
-* [`/etc/hosts` syntax](#etc-hosts-syntax): the old, tried-and-true approach that uses the same syntax that operating systems do for their hosts files.
+* [/etc/hosts</code>语法](#etc-hosts-syntax)： 使用与操作系统处理其主机文件相同的语法的老式、经过实践检验的语法。
 
-* [Domains-only syntax](#domains-only-syntax): a simple list of domain names.
+* [只适用于域的语法](#domains-only-syntax)：一个简单的域名列表。
 
 If you are creating a blocklist, we recommend using the [Adblock-style syntax](#adblock-style-syntax). It has a couple of important advantages over the old-style syntax:
 

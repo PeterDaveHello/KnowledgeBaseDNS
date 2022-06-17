@@ -1,32 +1,32 @@
 ---
-title: How to flush DNS cache
+title: 如何刷新DNS缓存
 sidebar_position: 1
 ---
 
-# How to flush DNS cache
+# 如何刷新DNS缓存
 
-## What is DNS cache?
+## DNS缓存是什么？
 
-DNS cache stores the IP addresses of visited sites on the local computer so that they load faster next time. Instead of doing a long DNS lookup, the system answers the queries with DNS records from the temporary DNS cache.
+DNS 缓存将访问站点的 IP 地址存储在本地计算机上，以便在下次加载时可以加载地更快。 系统不进行长时间的 DNS 查找，而是使用临时 DNS 缓存中的 DNS 记录来回答查询。
 
-The DNS cache contains so-called [resource records (RRs)](https://en.wikipedia.org/wiki/Domain_Name_System#Resource_records), which are:
+DNS 缓存包含所谓的[资源记录](https://en.wikipedia.org/wiki/Domain_Name_System#Resource_records)，他们是：
 
-* **Resource data (or rdata)**;
-* **Record type**;
-* **Record name**;
-* **TTL (time to live)**;
-* **Class**;
-* **Resource data length**.
+* **资源数据(或 rdata)**
+* **记录类型**
+* **记录名字**
+* **TTL**
+* **Class**
+* **资源数据长度**
 
-## When you might need to clear the cache
+## 当您可能需要清除缓存时
 
-**You regularly get a 404 error.** For example, the website was transferred to another server, and its IP address has changed. To make the browser open the website from the new IP address, you need to remove the cached IP from the DNS cache.
+**你经常会得到一个404的错误。**例如，该网站被转移到另一台服务器，其 IP 地址发生了变化。 要使浏览器从新的 IP 地址打开网站，您需要从 DNS 缓存中删除已经缓存的 IP。
 
-**You want to improve your privacy.**
+**你想改善你的隐私。**
 
-**You want to protect yourself from hacker attacks and viruses.** When the DNS cache is corrupted, your browser may redirect you to an IP address of a malicious website that an attacker inserted in your computer’s DNS records.
+**你想保护自己免受黑客攻击和电脑病毒的影响。**当 DNS 缓存损坏时，浏览器可能会将您重定向到攻击者插入您计算机的 DNS 记录中的恶意网站的 IP 地址。
 
-## How to flush DNS cache on different OSs
+## 如何在不同的操作系统上刷新 DNS 缓存
 
 ### macOS
 

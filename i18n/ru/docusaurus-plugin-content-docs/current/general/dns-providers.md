@@ -1029,31 +1029,45 @@ Cерверы с функцией разрешения имён DNS без фи�
 
 [NextDNS](https://nextdns.io/) предоставляет публично доступные нефильтрующие резолверы без логирования вдобавок к настраиваемым фильтрующим фримиум-серверам с опциональным логированием.
 
-#### Нефильтрующий
+#### Ultra-low latency
 
-| Протокол       | Адрес                  |                                                                   |
-| -------------- | ---------------------- | ----------------------------------------------------------------- |
-| DNS-over-HTTPS | `dns.nextdns.io`       | [Добавить в AdGuard](sdns://AgcAAAAAAAAAAAAOZG5zLm5leHRkbnMuaW8A) |
-| DNS-over-TLS   | `tls://dns.nextdns.io` | [Добавить в AdGuard](sdns://AwcAAAAAAAAAAAAOZG5zLm5leHRkbnMuaW8)  |
+| Протокол       | Адрес                    |                                                                                 |
+| -------------- | ------------------------ | ------------------------------------------------------------------------------- |
+| DNS-over-HTTPS | `https://dns.nextdns.io` | [Добавить в AdGuard](sdns://AgcAAAAAAAAAAAAOZG5zLm5leHRkbnMuaW8KL2Rucy1xdWVyeQ) |
+| DNS-over-TLS   | `tls://dns.nextdns.io`   | [Добавить в AdGuard](sdns://AwcAAAAAAAAAAAAOZG5zLm5leHRkbnMuaW8)                |
+
+#### Anycast
+
+| Протокол       | Адрес                            |                                                                                           |
+| -------------- | -------------------------------- | ----------------------------------------------------------------------------------------- |
+| DNS-over-HTTPS | `https://anycast.dns.nextdns.io` | [Добавить в AdGuard](sdns://AgcAAAAAAAAAAAAWYW55Y2FzdC5kbnMubmV4dGRucy5pbwovZG5zLXF1ZXJ5) |
+| DNS-over-TLS   | `tls://anycast.dns.nextdns.io`   | [Добавить в AdGuard](sdns://AwcAAAAAAAAAAAAWYW55Y2FzdC5kbnMubmV4dGRucy5pbw)               |
+
 
 ### RethinkDNS
 
 [RethinkDNS](https://www.rethinkdns.com/configure) предоставляет сервис DNS-over-HTTPS, работающий как Cloudflare Worker, и сервис DNS-over-TLS, работающий как Fly.io Worker с настраиваемыми списками блокировки.
 
-#### Нефильтрующий
+#### Unfiltered
 
 | Протокол       | Адрес                           |                                                                             |
 | -------------- | ------------------------------- | --------------------------------------------------------------------------- |
 | DNS-over-HTTPS | `https://basic.rethinkdns.com/` | [Добавить в AdGuard](sdns://AgcAAAAAAAAAAAAUYmFzaWMucmV0aGlua2Rucy5jb20BLw) |
 | DNS-over-TLS   | `tls://max.rethinkdns.com`      | [Добавить в AdGuard](sdns://AwcAAAAAAAAAAAASbWF4LnJldGhpbmtkbnMuY29t)       |
 
-#### Блокировка вредоносных доменов
+
+### ControlD
+
+[ControlD](https://controld.com/free-dns) is public DNS service which provides ads,malware, and social media blocking.
+
+#### Block malware
 
 | Протокол       | Адрес                             |                                                                                          |
 | -------------- | --------------------------------- | ---------------------------------------------------------------------------------------- |
 | DNS, IPv4      | `76.76.2.1`                       | [Добавить в AdGuard](sdns://AAcAAAAAAAAACTc2Ljc2LjIuMQ)                                  |
 | DNS-over-HTTPS | `https://freedns.controld.com/p1` | [Добавить в AdGuard](sdns://AgcAAAAAAAAAH2h0dHBzOi8vZnJlZWRucy5jb250cm9sZC5jb20vcDEAAAA) |
 | DNS-over-TLS   | `tls://p1.freedns.controld.com`   | [Добавить в AdGuard](sdns://AwcAAAAAAAAAF3AxLmZyZWVkbnMuY29udHJvbGQuY29tAAA)             |
+
 ##### Блокировка вредоносных доменов и рекламы
 
 | Протокол       | Адрес                             |                                                                                          |
@@ -1072,7 +1086,7 @@ Cерверы с функцией разрешения имён DNS без фи�
 
 ### Mullvad
 
-[Mullvad](https://mullvad.net/en/help/dns-over-https-and-dns-over-tls/) предоставляет общедоступный DNS-сервис с минимизацией QNAME, эндпоинтами в Австралии, Германии, Сингапуре, Швеции, Соединённом Королевстве и США (Нью-Йорк и Лос-Анджелес).
+[Mullvad](https://mullvad.net/en/help/dns-over-https-and-dns-over-tls/) provides publicly accessible DNS with QNAME minimization, endpoints located in Australia, Germany, Singapore, Sweden, United Kingdom and United States (New York and Los Angeles).
 
 #### Нефильтрующий
 
@@ -1081,40 +1095,40 @@ Cерверы с функцией разрешения имён DNS без фи�
 | DNS-over-HTTPS | `https://doh.mullvad.net/dns-query` | [Добавить в AdGuard](sdns://AgcAAAAAAAAAAAAPZG9oLm11bGx2YWQubmV0Ci9kbnMtcXVlcnk) |
 | DNS-over-TLS   | `tls://doh.mullvad.net`             | [Добавить в AdGuard](sdns://AwcAAAAAAAAAAAAPZG9oLm11bGx2YWQubmV0)                |
 
-#### Блокировка рекламы
+#### Ad blocking
 
 | Протокол       | Адрес                                       |                                                                                             |
 | -------------- | ------------------------------------------- | ------------------------------------------------------------------------------------------- |
 | DNS-over-HTTPS | `https://adblock.doh.mullvad.net/dns-query` | [Добавить в AdGuard](sdns://AgcAAAAAAAAAAAAXYWRibG9jay5kb2gubXVsbHZhZC5uZXQKL2Rucy1xdWVyeQ) |
 | DNS-over-TLS   | `tls://adblock.doh.mullvad.net`             | [Добавить в AdGuard](sdns://AwcAAAAAAAAAAAAXYWRibG9jay5kb2gubXVsbHZhZC5uZXQ)                |
 
-### Небольшие персональные резолверы
+### Small personal resolvers
 
-В этом разделе собраны маленькие, в основном персональные DNS-резолверы. Часто у них всего один или очень мало серверов и хуже время работоспособности по сравнению с «большими» провайдерами. Мы не сможем должным образом следить за их доступностью. **Используйте их на свой страх и риск!**
+In this section we list small, mostly personal DNS resolvers. They often have only one or very few servers and worse uptime than 'big' providers. We won't be able to proper monitor their availability. **Use them at your own risk!**
 
 #### Arapurayil
 
-[Arapurayil](https://dns.arapurayil.com) — это персональный DNS-сервис, расположенный в Мумбаи, Индия.
+[Arapurayil](https://dns.arapurayil.com) is a personal DNS service hosted in Mumbai, India.
 
-Без логирования | Фильтрует рекламу, трекеры, фишинг и т.д. | DNSSEC | Минимизация QNAME | Нет EDNS Client Subnet.
+Non-logging | Filters ads, trackers, phishing,etc | DNSSEC | QNAME Minimization | No EDNS Client-Subnet.
 
-| Протокол       | Адрес                                                              |                                                                                                                                                             |
-| -------------- | ------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| DNSCrypt, IPv4 | Хост: `2.dnscrypt-cert.dns.arapurayil.com` IP-адрес: `3.7.156.128` | [Добавить в AdGuard](sdns://AQMAAAAAAAAAEDMuNy4xNTYuMTI4Ojg0NDMgDXD9OSDJDwe2q9bi836PURTP14NLYS03RbDq6j891ZciMi5kbnNjcnlwdC1jZXJ0LmRucy5hcmFwdXJheWlsLmNvbQ) |
-| DNS-over-HTTPS | Хост: `https://dns.arapurayil.com/dns-query`                       | [Добавить в AdGuard](sdns://AgMAAAAAAAAAAAASZG5zLmFyYXB1cmF5aWwuY29tCi9kbnMtcXVlcnk)                                                                        |
+| Протокол       | Адрес                                                        |                                                                                                                                                             |
+| -------------- | ------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| DNSCrypt, IPv4 | Host: `2.dnscrypt-cert.dns.arapurayil.com` IP: `3.7.156.128` | [Добавить в AdGuard](sdns://AQMAAAAAAAAAEDMuNy4xNTYuMTI4Ojg0NDMgDXD9OSDJDwe2q9bi836PURTP14NLYS03RbDq6j891ZciMi5kbnNjcnlwdC1jZXJ0LmRucy5hcmFwdXJheWlsLmNvbQ) |
+| DNS-over-HTTPS | Host: `https://dns.arapurayil.com/dns-query`                 | [Добавить в AdGuard](sdns://AgMAAAAAAAAAAAASZG5zLmFyYXB1cmF5aWwuY29tCi9kbnMtcXVlcnk)                                                                        |
 
 
-#### Официальный DNS-сервер от Dandelion Sprout's
+#### Dandelion Sprout's Official DNS Server
 
-[Dandelion Sprout's Official DNS Server](https://github.com/DandelionSprout/adfilt/tree/master/Dandelion%20Sprout's%20Official%20DNS%20Server) — это персональный DNS-сервис, расположенный в Тронхейме, Норвегия, и использующий инфраструктуру AdGuard Home.
+[Dandelion Sprout's Official DNS Server](https://github.com/DandelionSprout/adfilt/tree/master/Dandelion%20Sprout's%20Official%20DNS%20Server) is a personal DNS service hosted in Trondheim, Norway, using an AdGuard Home infrastructure.
 
-Блокирует больше рекламы и вредоносного ПО, чем AdGuard DNS благодаря более продвинутому синтаксису, также блокирует ультраправые таблоиды и большинство имиджбордов, частично блокирует трекинг. Логирование используется, чтобы улучшить используемые им фильтры (например, для разблокирования сайтов, которые не должны были блокироваться) и определить наиболее удачное время для системного обновления сервера.
+Blocks more ads and malware than AdGuard DNS thanks to more advanced syntax, but goes easier on trackers, and blocks alt-right tabloids and most imageboards. Logging is used to improve its used filterlists (e.g. by unblocking sites that shouldn't have been blocked), and to determine the least bad times for server system updates.
 
 | Протокол       | Адрес                                                 |                                                                                                          |
 | -------------- | ----------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
 | DNS-over-HTTPS | `https://dandelionsprout.asuscomm.com:2501/dns-query` | [Добавить в AdGuard](sdns://AgEAAAAAAAAAAAAhZGFuZGVsaW9uc3Byb3V0LmFzdXNjb21tLmNvbToyNTAxCi9kbnMtcXVlcnk) |
 | DNS-over-TLS   | `tls://dandelionsprout.asuscomm.com:853`              | [Добавить в AdGuard](sdns://AwEAAAAAAAAAAAAgZGFuZGVsaW9uc3Byb3V0LmFzdXNjb21tLmNvbTo4NTM)                 |
 | DNS-over-QUIC  | `quic://dandelionsprout.asuscomm.com:48582`           | [Добавить в AdGuard](sdns://BAEAAAAAAAAAAAAiZGFuZGVsaW9uc3Byb3V0LmFzdXNjb21tLmNvbTo0ODU4Mg)              |
-| DNS, IPv4      | Меняется, см. ссылку выше.                            |                                                                                                          |
-| DNS, IPv6      | Меняется, см. ссылку выше.                            |                                                                                                          |
-| DNSCrypt, IPv4 | Меняется, см. ссылку выше.                            |                                                                                                          |
+| DNS, IPv4      | Varies; see link above.                               |                                                                                                          |
+| DNS, IPv6      | Varies; see link above.                               |                                                                                                          |
+| DNSCrypt, IPv4 | Varies; see link above.                               |                                                                                                          |
